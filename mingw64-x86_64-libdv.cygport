@@ -1,0 +1,27 @@
+CROSS_HOST="x86_64-w64-mingw32"
+inherit cross
+
+NAME="mingw64-x86_64-libdv"
+VERSION=1.0.0
+RELEASE=1
+CATEGORY="Devel"
+SUMMARY="DV video codec for Win64 toolchain"
+DESCRIPTION="The Quasar DV codec (libdv) is a software codec for DV video, the
+encoding format used by most digital camcorders, typically those that support
+the IEEE 1394 (a.k.a. FireWire or i.Link) interface. Libdv was developed
+according to the official standards for DV video--IEC 61834 and SMPTE 314M."
+HOMEPAGE="http://libdv.sourceforge.net/"
+SRC_URI="mirror://sourceforge/libdv/libdv-${VERSION}.tar.gz"
+SRC_DIR="libdv-${VERSION}"
+PATCH_URI="1.0.0-no-undefined.patch
+           1.0.0-vpath.patch"
+
+DISTCLEANFILES="libdv.pc"
+
+# asm: ELF-specific
+# gtk: gtk+-1.x
+CYGCONF_ARGS="--disable-asm --disable-gtk --disable-sdl --disable-xv"
+# mostly Linux-specific
+MAKEOPTS+=" bin_PROGRAMS= noinst_PROGRAMS= man_MANS= "
+
+KEEP_LA_FILES="none"

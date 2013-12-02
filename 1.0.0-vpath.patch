@@ -1,0 +1,22 @@
+--- origsrc/libdv-1.0.0/encodedv/Makefile.am	2004-01-14 00:14:15.000000000 -0600
++++ src/libdv-1.0.0/encodedv/Makefile.am	2006-10-09 14:34:52.772750000 -0500
+@@ -1,3 +1,4 @@
++INCLUDES = -I$(top_srcdir)
+ 
+ man_MANS                  = encodedv.1 dvconnect.1 dubdv.1
+ 
+--- origsrc/libdv-1.0.0/libdv/Makefile.am	2006-08-06 16:10:55.000000000 -0500
++++ src/libdv-1.0.0/libdv/Makefile.am	2006-10-09 14:34:52.788375000 -0500
+@@ -1,3 +1,4 @@
++INCLUDES = -I$(top_srcdir)
+ 
+ MAINTAINERCLEANFILES      = Makefile.in $(AUX_DIST)
+ 
+--- origsrc/libdv-1.0.0/playdv/Makefile.am	2004-01-14 00:14:15.000000000 -0600
++++ src/libdv-1.0.0/playdv/Makefile.am	2006-10-09 14:34:52.819625000 -0500
+@@ -1,3 +1,5 @@
++INCLUDES = -I$(top_srcdir)
++
+ man_MANS                  = playdv.1 
+ 
+ EXTRA_DIST                = $(man_MANS)
